@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+    {% block body_block%}
+
+<h2>Machine Learning</h2>
+<p class="fileUpload">{{file_name}}</p>
+
+<div class="jumbotron">
+
+  <form class="" action="index.html" method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="fileUpload col-lg-4 col-xs-6">
+        <label>  <b>Select Machine learning algorithm: <br>
+                    Classification </b></label>
+        <select multiple class="form-control" name="mlmodel">
+                <option selected disabled hidden> - Select one - </option>
+                <option value='logreg'>Logistic Regression</option>
+                <option value='RF'>Random Forest</option>
+                <option value='xgboost'>xgboost</option>
+             </select>
+      </div>
+
+        <div class="fileUpload col-lg-6 col-xs-6">
+          <p> <b>Your data selections: </b> <br>
+              <b>X variables:</b> {{xcols}} <br>
+              <b>Y variables:</b> {{ycol}} <br>
+              <b>Missing values:</b> {{missing}} <br>
+              <b>Training set size:</b> {{trainingset_s}}% <br>
+              <b>Test set size:</b> {{testset_s}}%<br>
+              <b>Feature scaling:</b> {{feat}} <br></p>
+        </div>
+    </div>
+      <div class="fileUpload btn btn-primary">
+        <span>Submit</span>
+          <div>
+              <input type="Submit" name="prepross_submit" class="upload">
+          </div>
+      </div>
+  </form>
+</div>
+
+
+<div class="row">
+  {% for key, acc, true_negative, false_positive, false_negative, true_positive in accuracy.values %}
+  <div class="table-responsive col-lg-4 col-xs-6">
+    <h5>{{key}} accuracy = {{acc}}</h5>
+      <table class = 'table'>
+        <tr>
+          <th>  </th>
+          <th> Predicted NO </th>
+          <th> Predicted YES </th>
+        </tr>
+        <tr>
+          <td> <b>Actual NO</b> </td>
+          <td> {{true_negative}} </td>
+          <td> {{false_positive}} </td>
+        </tr>
+        <tr>
+          <td> <b>Actual YES</b> </td>
+          <td> {{false_negative}} </td>
+          <td> {{true_positive}} </td>
+        </tr>
+
+      </table>
+  </div>
+ {% endfor %}
+</div>
+
+        <div class = 'container col-md-8'>
+            {{ graph|safe }}
+        </div>
+
+
+{% endblock %}

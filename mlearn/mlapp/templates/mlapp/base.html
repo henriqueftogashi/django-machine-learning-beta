@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Machine learning</title>
+    <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js" ></script>
+
+  </head>
+  <body>
+    <div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand " href="{% url 'mlapp:index' %}">
+            <div class="input-group" >
+            <svg class="u-header-logo" >
+                              <path class="g-fill-primary" d="M 24.69,2.31 C 28.08,5.71 28.08,21.29 24.69,24.69 22.04,27.33 18.43,26.99 15.00,27.00 11.50,27.01 6.00,27.54 3.15,25.40 1.91,24.48 1.15,23.41 0.60,21.98 -0.29,19.67 -0.29,7.33 0.60,5.02 1.51,2.64 2.23,2.45 4.06,1.02 8.46,-0.49 21.22,-1.15 24.69,2.31 Z">
+                              </path>
+                              <path class="g-fill-white" d="M 33.00,2.00 C 33.00,2.00 33.00,21.00 33.00,21.00 33.00,21.00 30.00,21.00 30.00,21.00 30.00,21.00 30.00,2.00 30.00,2.00 30.00,2.00 33.00,2.00 33.00,2.00 Z
+                                                            M 10.00,10.00 C 13.43,7.53 14.39,8.13 18.00,10.00 26.70,3.74 26.00,16.10 26.00,21.00 26.00,21.00 23.00,21.00 23.00,21.00 23.00,21.00 23.00,11.00 23.00,11.00 17.25,12.84 18.02,15.65 18.00,21.00 18.00,21.00 15.00,21.00 15.00,21.00 15.00,21.00 15.00,11.00 15.00,11.00 9.25,12.84 10.02,15.65 10.00,21.00 10.00,21.00 7.00,21.00 7.00,21.00 7.00,21.00 7.00,8.00 7.00,8.00 7.00,8.00 10.00,10.00 10.00,10.00 Z
+                                                            M 36.66,13.02 C 37.81,7.52 45.84,4.97 48.00,15.00 48.00,15.00 39.00,15.00 39.00,15.00 41.97,18.44 42.51,18.73 47.00,18.00 42.91,24.11 35.29,19.60 36.66,13.02 Z M 60.40,11.07 C 61.23,13.04 61.00,18.69 61.00,21.00 58.83,20.90 54.00,21.10 52.33,19.97 51.60,19.47 51.05,18.81 50.91,17.91 50.32,14.13 55.63,14.08 58.00,14.00 55.85,10.30 55.11,10.59 51.00,11.07 53.52,7.24 58.60,7.01 60.40,11.07 Z
+                                                            M 68.00,10.00 C 68.00,10.00 72.00,8.00 72.00,8.00 69.50,15.01 68.04,10.10 68.00,21.00 68.00,21.00 65.00,21.00 65.00,21.00 65.00,21.00 65.00,8.00 65.00,8.00 65.00,8.00 68.00,10.00 68.00,10.00 Z
+                                                            M 82.86,8.70 C 87.02,10.15 86.00,17.42 86.00,21.00 86.00,21.00 83.00,21.00 83.00,21.00 83.00,21.00 82.00,10.00 82.00,10.00 77.51,13.83 78.02,15.44 78.00,21.00 78.00,21.00 75.00,21.00 75.00,21.00 75.00,21.00 75.00,8.00 75.00,8.00 80.02,9.61 80.28,7.80 82.86,8.70 Z
+                                                            M 39.00,13.00 C 39.00,13.00 45.00,13.00 45.00,13.00 42.78,9.72 41.22,9.72 39.00,13.00 Z M 53.00,16.00 C 53.00,16.00 53.00,18.00 53.00,18.00 56.54,18.47 56.80,18.39 58.00,15.00 58.00,15.00 53.00,16.00 53.00,16.00 Z">
+                              </path>
+            </svg>
+          </a>
+          <a class="nav-link" href="{% url 'mlapp:upload' %}"> Upload <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'mlapp:index' %}"> Start New Project <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'mlapp:preprocessing' %}"> Preprocessing <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'mlapp:modelling' %}"> Machine Learning <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'admin:index' %}"> Admin <span class="sr-only">(current)</span></a>
+          </div>
+
+    </nav>
+    </div>
+
+    <div class="container">
+
+    {% block body_block %}
+    {# Anything outside of this will be inherited if you use extend.#}
+    {% endblock %}
+    </div>
+
+
+  </body>
+</html>

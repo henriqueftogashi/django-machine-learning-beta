@@ -1,0 +1,58 @@
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.fileUploadPos {
+  margin: 5px;
+}
+
+.g-fill-primary {
+  fill: #e62154 !important;
+}
+
+.g-fill-white {
+  fill: #fff !important;
+}
+
+.u-header-logo {
+  width: 86px;
+  height: 26px;
+}
+
+.btn-primary {
+  background-color: #e62154;
+  border-color: #e62154;
+}
+
+.btn-primary:hover {
+  color: blue;
+  background-color: #e31a4e;
+  border-color: #e31a4e;
+}
+
+.nav-link{
+  color:white;
+}
+
+.pad-modelling {
+  color:white;
+}
+
+.pad-modelling:hover{
+  color: blue;
+  background-color: #e31a4e;
+  border-color: #e31a4e;
+}
