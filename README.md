@@ -38,11 +38,11 @@ The project is set up for a postgres database. You need to change the DB details
 
 For SQLlite replace in setting.py
 
-'''
+```
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-'''
+```
