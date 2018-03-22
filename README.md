@@ -1,87 +1,48 @@
 # django-machine-learning-beta
 
-One Paragraph of project description goes here
+This Django app (beta) accepts any csv file to run a classification model model among Logistic Regression, Random Forest (10 interations) and xgboost. The user has an option to profile and preprocess data addressing missing values, one hot encoding and feature scaling. The 3 models can be selected simultaneously for accuracy comparison. The results and validation are provided as confusion matrix and ROC curve.
+
+This is my first Django project and is still a early beta version. I hope the code published here
+can help people that are also learning Django.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Install atom
+packages:
+platformio-ide-terminal. After downloading go to settings and change "Shell Override" to C:\WINDOWS\system32\cmd.exe
+atom-django
+autocomplete-html-entities
+autocomplete-python
 
-### Prerequisites
+Installing anaconda and python:
+https://conda.io/docs/user-guide/install/windows.html
 
-What things you need to install the software and how to install them
+conda info --envs #list environments
 
-```
-Give examples
-```
+conda create --name myDjangoEnv python=3.6 #creates environment #create one environment for django project because if libraries get updated it can break the app
 
-### Installing
+activate MyDjangoEnv #activate environment
 
-A step by step series of examples that tell you have to get a development env running
+conda install django #installs django in the environment 
 
-Say what the step will be
+pip install pandas
+pip install plotly
+pip install sklearn
+pip install scipy
+pip install xgboost
 
-```
-Give the example
-```
 
-And repeat
+## Database
 
-```
-until finished
-```
+The project is set up for a postgres database. You need to change the DB details such as owner and password.
 
-End with an example of getting some data out of the system or using it for a little demo
+For SQLlite replace in setting.py
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+'''
