@@ -1,6 +1,6 @@
 # django-machine-learning-beta
 
-This Django app (beta) accepts any csv file to run a classification model model among Logistic Regression, Random Forest (10 interations) and xgboost. The user has an option to profile and preprocess data addressing missing values, one hot encoding and feature scaling. The 3 models can be selected simultaneously for accuracy comparison. The results and validation are provided as confusion matrix and ROC curve.
+This Django app (beta) accepts any csv file to run a classification model model among Logistic Regression, Random Forest (10 interations) and xgboost. The user has an option to profiling and preprocess data; addressing missing values, one hot encoding and feature scaling. The 3 models can be selected simultaneously for accuracy comparison. The results and validation are provided as confusion matrix and ROC curve.
 
 This is my first Django project and is still a early beta version. I hope the code published here
 can help people that are also learning Django.
